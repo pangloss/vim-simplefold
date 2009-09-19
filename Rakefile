@@ -1,15 +1,15 @@
 require 'rake'
 
-files = ['plugin/simplefold.vim', 'doc/simplefold.txt']
+files = ['plugin/SimpleFold.vim', 'doc/SimpleFold.txt']
 
 desc "Make zip file"
-file 'simplefold.zip' => files do |t|
+file 'SimpleFold.zip' => files do |t|
   File.unlink t.name if File.exists?(t.name)
   system('zip','-q',t.name,*t.prerequisites)
 end
 
 desc "Make vimball"
-file 'simplefold.vba' => files do |t|
+file 'SimpleFold.vba' => files do |t|
   File.unlink t.name if File.exists?(t.name)
   File.open(t.name,"w") do |out|
     out.puts '" Vimball Archiver by Charles E. Campbell, Jr., Ph.D.'
@@ -37,7 +37,7 @@ task :install do
                File.expand_path("~/.vim")
              end
 
-  puts "Installing simplefold.vim"
+  puts "Installing SimpleFold.vim"
   files.each do |file|
     target_file = File.join(vimfiles, file)
     FileUtils.mkdir_p(File.dirname(target_file))
@@ -47,6 +47,6 @@ task :install do
   end
 end
 
-task 'zip' => 'simplefold.zip'
-task 'vimball' => 'simplefold.vba'
+task 'zip' => 'SimpleFold.zip'
+task 'vimball' => 'SimpleFold.vba'
 task :default => [:zip, :vimball]
