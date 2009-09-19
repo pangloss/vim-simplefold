@@ -454,5 +454,7 @@ let g:omlet_simplefold_nestable_start_expr = g:ocaml_simplefold_nestable_start_e
 let g:omlet_simplefold_nestable_end_expr = g:ocaml_simplefold_nestable_end_expr
 let g:omlet_simplefold_prefix = g:ocaml_simplefold_prefix
 
+let g:javascript_simplefold_prefix = '\v^((^\s{0,4}\S*\s*:.*\S+.*([,\{]$|\_\s*\}))|(^\w.*[\{=])|(^\s*\}))@!.*$'
+let g:javascript_simplefold_expr =     '\v(^\s{0,4}\S*\s*:.*\S+.*([,\{]$|\_\s*\}))|(^\w.*[\{=])'
 
 let &cpo = s:save_cpo
