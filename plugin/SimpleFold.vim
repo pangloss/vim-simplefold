@@ -2,13 +2,20 @@
 " Plugin for simple search-based folding
 " Ships with support for Ruby, Perl, Java, PHP, Objective Caml, but can be
 " easily tailored to other filetypes.
-"     Version:    0.5.0 2007-04-16
-"      Author:    Mauricio Fernandez <mfp@acm.org>
-"  Maintainer:    Mauricio Fernandez <mfp@acm.org> http://eigenclass.org
-"     License:    GPL
+"       Version:    0.6.0 2009-09-18
+"        Author:    Mauricio Fernandez <mfp@acm.org>
+"    Maintainer:    Mauricio Fernandez <mfp@acm.org> http://eigenclass.org
+"   Contributor:    Darrick Wiebe <darrick@innatesoftware.com>
+"       License:    GPL
 "
 " Changelog
 " ---------
+"
+" 0.6.0
+"  * Added Objective-C and Javascript support
+"  * Moved the fold info to the right edge of the window to preserve the
+"    indentation of the lines that are folded.
+"
 " 0.5.0 (tested on vim 7.0)
 "  * changed configuration system: use g:xxx_simplefold_* variables instead of
 "    autocmd (you can also use w:xxx_simplefold_* or b:xxx_simplefold_* for
