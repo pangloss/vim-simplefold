@@ -398,6 +398,17 @@ let g:ruby_simplefold_prefix = '\v^\s*(#([^{]+|\{[^{]|\{\{[^{])*)?$'
 let g:java_simplefold_expr = 
 	    \ '\(^\s*\(\(private\|public\|protected\|class\)\s\)\)'
 
+let g:objc_simplefold_expr = '\v(^\s*(\@implementation|\@interface|' .
+      \ '#import|#pragma\smark|#include|#define|' .
+      \ '\@synthesize|\@property|\@dynamic|' .
+      \ 'static|typedef|enum))|' .
+      \ '(^(-|\+)\_[^{]*\{)'
+let g:objc_simplefold_end_expr = '\v(^\s*(\@end))'
+" let g:objc_simplefold_nestable_start_expr = '\v(^\s*(\@implementation|\@interface|' .
+"       \ '(-|\+|case|if|else|for|switch|enum)\_[^{]*\{|' .
+"       \ '\@synthesize|\@property|\@dynamic|static))'
+" let g:objc_simplefold_nestable_end_expr = '\v(^\s*(\}|\@end))'
+let g:objc_simplefold_prefix = '\v^\s*((/\*\_.*\*/)|((//).*))?$'
 
 " Perl support
 let g:perl_simplefold_expr =
