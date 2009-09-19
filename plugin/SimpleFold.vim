@@ -153,7 +153,14 @@ function! s:SimpleFold_FoldText()
     endif
     let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
     let diff = v:foldend - v:foldstart + 1
-    return  '+' . v:folddashes . '[' . s:Num2S(diff,3) . ']' . sub
+    let numspaces = winwidth(0) - 10 - strlen(sub)
+    if numspaces > 0
+      let spaces = strpart('                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ',
+            \ 0, numspaces)
+    else
+      let spaces = ' '
+    endif
+    return  sub . spaces . '+' . v:folddashes . '[' . s:Num2S(diff,3) . ']'
 endfunction
 
 "{{{~ Foldsearch originally based on t77: Fold on search result
